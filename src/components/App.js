@@ -6,15 +6,16 @@ import {textChange} from '../actions';
 class App extends Component {
   render() {
     const props = this.props;
+    const { textLength, textChange } = this.props;
 
     return (
-      <React.Fragment>
-        <div>文字数： {props.textLength}</div>
+      <>
+        <div>文字数： {textLength}</div>
         <textarea
           type="text"
           onChange={e => props.textChange(e.target.value, e.target.value.length)}
         />
-      </React.Fragment>
+      </>
     );
   }
 }
